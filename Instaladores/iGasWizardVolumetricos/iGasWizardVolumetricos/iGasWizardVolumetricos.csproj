@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{558940A8-82FE-49B9-A415-928A413586D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iGasWizardVolumetricos</RootNamespace>
+    <AssemblyName>iGasWizardVolumetricos</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <ApplicationManifest>Generales\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\DevExpress.Data.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\DevExpress.Utils.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\DevExpress.XtraEditors.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\DevExpress.XtraGrid.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\DevExpress.XtraLayout.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5" />
+    <Reference Include="DevExpress.XtraScheduler.v8.2.Core, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5" />
+    <Reference Include="DevExpress.XtraWizard.v8.2, Version=8.2.4.0, Culture=neutral, PublicKeyToken=49d90c14d24271b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\DevExpress.XtraWizard.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=2.5.2.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Imagensoft NET\Liberados\IGas\Adicional\Host\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generales\Constantes.cs" />
+    <Compile Include="Generales\Extensiones.cs" />
+    <Compile Include="Generales\InstallStatus.cs" />
+    <Compile Include="Generales\Read64bitRegistryFrom32bitApp.cs" />
+    <Compile Include="Generales\Utilerias.cs" />
+    <Compile Include="Generales\WorkItem.cs" />
+    <Compile Include="Interfaces\IUserPages.cs" />
+    <Compile Include="Pantallas\DatosDeEmpresa\PDatosEmpresa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\DatosDeEmpresa\PDatosEmpresa.Designer.cs">
+      <DependentUpon>PDatosEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\DatosDeEmpresa\Presenter.cs" />
+    <Compile Include="Pantallas\Dispensarios\PDispensarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Dispensarios\PDispensarios.Designer.cs">
+      <DependentUpon>PDispensarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Gilbarco\PGilbarco.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Gilbarco\PGilbarco.Designer.cs">
+      <DependentUpon>PGilbarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Impresora\PImpresora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Impresora\PImpresora.Designer.cs">
+      <DependentUpon>PImpresora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Islas\PIslas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Islas\PIslas.Designer.cs">
+      <DependentUpon>PIslas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Licenciamiento\PLicenciamiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Licenciamiento\PLicenciamiento.Designer.cs">
+      <DependentUpon>PLicenciamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Licenciamiento\Presenter.cs" />
+    <Compile Include="Pantallas\Mangueras\PMangueras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Mangueras\PMangueras.Designer.cs">
+      <DependentUpon>PMangueras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\MarcaDispensario\PMarcaDispensario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\MarcaDispensario\PMarcaDispensario.Designer.cs">
+      <DependentUpon>PMarcaDispensario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\MarcaTanque\PMarcaTanque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\MarcaTanque\PMarcaTanque.Designer.cs">
+      <DependentUpon>PMarcaTanque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\PosicionesCarga\PPosicionesCarga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\PosicionesCarga\PPosicionesCarga.Designer.cs">
+      <DependentUpon>PPosicionesCarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Procesando\PProcesando.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Procesando\PProcesando.Designer.cs">
+      <DependentUpon>PProcesando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Procesando\Presenter.cs" />
+    <Compile Include="Pantallas\Requerimientos\PRequerimientos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Requerimientos\PRequerimientos.Designer.cs">
+      <DependentUpon>PRequerimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Tanques\PTanques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Tanques\PTanques.Designer.cs">
+      <DependentUpon>PTanques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\TurnosAdministrativos\Presenter.cs" />
+    <Compile Include="Pantallas\TurnosAdministrativos\PTurnosAdministrativos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\TurnosAdministrativos\PTurnosAdministrativos.Designer.cs">
+      <DependentUpon>PTurnosAdministrativos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\UbicacionBD\Presenter.cs" />
+    <Compile Include="Pantallas\UbicacionBD\PUbicarBD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\UbicacionBD\PUbicarBD.Designer.cs">
+      <DependentUpon>PUbicarBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Wayne\PWayne.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Wayne\PWayne.Designer.cs">
+      <DependentUpon>PWayne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Entidades\CombustibleVol.cs" />
+    <Compile Include="Persistencia\Entidades\DispensarioVol.cs" />
+    <Compile Include="Persistencia\Entidades\Empresa.cs" />
+    <Compile Include="Persistencia\Entidades\EmpresaConfiguracion.cs" />
+    <Compile Include="Persistencia\Entidades\Estacion.cs" />
+    <Compile Include="Persistencia\Entidades\ImpresoraVol.cs" />
+    <Compile Include="Persistencia\Entidades\Procesando.cs" />
+    <Compile Include="Persistencia\Entidades\TipoInterfazDispensarioVol.cs" />
+    <Compile Include="Persistencia\Entidades\IslaVol.cs" />
+    <Compile Include="Persistencia\Entidades\Licencia.cs" />
+    <Compile Include="Persistencia\Entidades\MangueraVol.cs" />
+    <Compile Include="Persistencia\Entidades\MarcaDispensarioVol.cs" />
+    <Compile Include="Persistencia\Entidades\MarcaTanqueVol.cs" />
+    <Compile Include="Persistencia\Entidades\PosicionCargaVol.cs" />
+    <Compile Include="Persistencia\Entidades\Requerimiento.cs" />
+    <Compile Include="Persistencia\Entidades\TanqueVol.cs" />
+    <Compile Include="Persistencia\Entidades\TipoMarcaDispensarioVol.cs" />
+    <Compile Include="Persistencia\Entidades\TurnosAdministrativos.cs" />
+    <Compile Include="Persistencia\Entidades\UbicarBD.cs" />
+    <Compile Include="Persistencia\Entidades\VariablesVol.cs" />
+    <Compile Include="Persistencia\Logica\CombustibleVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\Conexion.cs" />
+    <Compile Include="Persistencia\Logica\EmpresaConfiguracionPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\ImpresoraVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\ProcesandoPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\TipoInterfazDispensarioVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\MangueraVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\MarcaDispensarioVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\MarcaTanqueVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\RequerimientoPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\TanqueVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\TipoMarcaDispensarioVolPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\TurnosAdministrativosPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\UbicarBDPersistencia.cs" />
+    <Compile Include="Persistencia\Logica\VariablesVolPersistencia.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pantallas\DatosDeEmpresa\PDatosEmpresa.resx">
+      <DependentUpon>PDatosEmpresa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Dispensarios\PDispensarios.resx">
+      <DependentUpon>PDispensarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Gilbarco\PGilbarco.resx">
+      <DependentUpon>PGilbarco.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Impresora\PImpresora.resx">
+      <DependentUpon>PImpresora.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Islas\PIslas.resx">
+      <DependentUpon>PIslas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Licenciamiento\PLicenciamiento.resx">
+      <DependentUpon>PLicenciamiento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Mangueras\PMangueras.resx">
+      <DependentUpon>PMangueras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\MarcaDispensario\PMarcaDispensario.resx">
+      <DependentUpon>PMarcaDispensario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\MarcaTanque\PMarcaTanque.resx">
+      <DependentUpon>PMarcaTanque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\PosicionesCarga\PPosicionesCarga.resx">
+      <DependentUpon>PPosicionesCarga.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Procesando\PProcesando.resx">
+      <DependentUpon>PProcesando.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Requerimientos\PRequerimientos.resx">
+      <DependentUpon>PRequerimientos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Tanques\PTanques.resx">
+      <DependentUpon>PTanques.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\TurnosAdministrativos\PTurnosAdministrativos.resx">
+      <DependentUpon>PTurnosAdministrativos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\UbicacionBD\PUbicarBD.resx">
+      <DependentUpon>PUbicarBD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Wayne\PWayne.resx">
+      <DependentUpon>PWayne.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_server1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tanque_157x143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dispensario_192x332.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mangueras_157x104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Generales\app.manifest" />
+    <None Include="Resources\icono_igas.png" />
+    <Content Include="Resources\Base.png" />
+    <Content Include="Resources\Error.png" />
+    <Content Include="Resources\FechaVencimiento.png" />
+    <None Include="Resources\information_16x16.png" />
+    <Content Include="Resources\Info.png" />
+    <Content Include="Resources\Licencia.png" />
+    <Content Include="Resources\printer2.png" />
+    <Content Include="Resources\RazonSocial.png" />
+    <Content Include="Resources\Sentinel-Volumetrico.png" />
+    <None Include="Resources\wait_16x16.gif" />
+    <Content Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "C:\imagensoft net\Liberados\IGas\Volumetricos\WizardVolumetricos\Instaladores" /y
+xcopy "$(TargetPath)" "C:\Imagensoft NET\IGas\Volumetricos\2016-05-26-ID6729-IGasWizardVolumetrico\Instaladores\SetupiGasVolumetricos\SetupiGasVolumetricos\Modulos\tmp\InstaladorVolumetricos\" /y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
