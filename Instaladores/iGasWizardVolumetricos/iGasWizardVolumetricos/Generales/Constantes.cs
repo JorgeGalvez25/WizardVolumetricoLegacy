@@ -11,6 +11,8 @@ namespace iGasWizardVolumetricos.Generales
         public static string RutaComPort { get { return Utilerias.CombinarRutas(RutaImagenCo, @"PrgGas\ComPort\ComPortIgas.exe"); } }
         public static string RutaFirebird64 { get { return Utilerias.CombinarRutas(Root, @"util\x64\Firebird\Firebird-2.5.2.26540_0_x64.exe"); } }
         public static string RutaFirebird32 { get { return Utilerias.CombinarRutas(Root, @"util\x86\Firebird\Firebird-2.5.2.26540_0_Win32.exe"); } }
+        public static string RutaServicioDispensarios { get { return Utilerias.CombinarRutas(RutaVolumetricos, @"DISPENSARIOS\PDISPENSARIOS.exe"); } }
+        public static string RutaIniDispensarios { get { return Utilerias.CombinarRutas(RutaVolumetricos, @"DISPENSARIOS\PDISPENSARIOS.ini"); } }
 
         //public static string RutaFirebird64 { get { return Path.Combine(Root, @"util\x64\Firebird\Firebird-2.5.2.26540_0_x64.exe"); } }
         //public static string RutaFirebird32 { get { return Path.Combine(Root, @"util\x86\Firebird\Firebird-2.5.2.26540_0_Win32.exe"); } }

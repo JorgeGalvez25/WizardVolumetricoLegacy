@@ -71,6 +71,16 @@ namespace iGasWizardVolumetricos.Pantallas.Procesando
                     return result;
                 }
 
+                this.pnlProgress.Text = "75";
+                this.lblEstatus.Text = "Configurando e instalando Servicio de Dispensarios...";
+                if (!this.Presenter.ConfigurarEInstalarServicio(ref msj))
+                {
+                    flgError = true;
+                    flgContinue = true;
+                    Utilerias.Informacion(msj);
+                    return result;
+                }
+
                 result = true;
             }
             catch (Exception e)

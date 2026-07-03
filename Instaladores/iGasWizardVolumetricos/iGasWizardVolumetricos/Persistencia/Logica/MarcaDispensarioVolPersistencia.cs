@@ -71,7 +71,9 @@ namespace iGasWizardVolumetricos.Persistencia.Logica
             {
                 case 1:
                 case 4:
-                case 6: marca = 0; break;
+                case 6:
+                case 9: // Agregar Wayne 2w
+                    marca = 0; break;
                 case 2: marca = 1; break;
                 case 3: marca = 5; break;
                 case 5:

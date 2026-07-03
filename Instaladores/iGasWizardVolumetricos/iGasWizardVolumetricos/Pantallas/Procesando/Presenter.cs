@@ -197,5 +197,56 @@ namespace iGasWizardVolumetricos.Pantallas.Procesando
 
             return !flgError;
         }
+
+        public bool ConfigurarEInstalarServicio(ref string msj)
+        {
+            try
+            {
+                // 1. Obtener la marca seleccionada en el Paso 8
+                var marcaVol = WorkItem.Objetos<MarcaDispensarioVol>.Get();
+                if (marcaVol == null || marcaVol.Marca == 0)
+                {
+                    msj = "No se ha seleccionado una marca de dispensario.";
+                    return false;
+                }
+
+                // 2. Preparar el archivo PDISPENSARIOS.ini
+                string iniPath = Constantes.RutaIniDispensarios;
+                string dirPath = Path.GetDirectoryName(iniPath);
+
+                // Asegurarnos de que el directorio exista
+                if (!Directory.Exists(dirPath))
+                {
+                    Directory.CreateDirectory(dirPath);
+                }
+
+                // Fix Bug Conocido: Crear el archivo base si no existe para que IniParser no arroje FileNotFoundException
+                // Fix Bug Conocido: Crear el archivo base si no existe para que IniParser no arroje FileNotFoundException
+                if (!System.IO.File.Exists(iniPath))
+                {
+                    System.IO.File.WriteAllText(iniPath, "[config]\r\n");
+                }
+
+                // Escribir la configuración en el INI ANTES de instalar el servicio
+                IniParser parser = new IniParser(iniPath);
+                parser.EditSetting("config", "Marca", marcaVol.Marca.ToString());
+                parser.EditSetting("config", "ServidorSocket", "127.0.0.1:1004");
+                parser.SaveSettings();
+
+                // 3. Ejecutar la instalación del servicio
+                if (!Utilerias.InstalarServicioWindows(Constantes.RutaServicioDispensarios, "/INSTALL"))
+                {
+                    msj = "Falló la ejecución del comando /INSTALL para el servicio de dispensarios. Verifique permisos de administrador.";
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                msj = "[INSTALACIÓN DE SERVICIO] " + Utilerias.LeerExcepcion(e);
+                return false;
+            }
+        }
     }
 }

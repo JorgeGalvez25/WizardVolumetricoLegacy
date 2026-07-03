@@ -176,6 +176,33 @@ namespace iGasWizardVolumetricos.Generales
             return paths.Aggregate((x, y) => { return x + separator.ToString() + y; });
         }
 
+        public static bool InstalarServicioWindows(string rutaExe, string argumentos)
+        {
+            Process proceso = new Process();
+            try
+            {
+                proceso.StartInfo = new ProcessStartInfo();
+                proceso.StartInfo.FileName = rutaExe;
+                proceso.StartInfo.Arguments = argumentos;
+                proceso.StartInfo.CreateNoWindow = true;
+                proceso.StartInfo.UseShellExecute = false;
+                proceso.StartInfo.Verb = "runas"; // Requiere elevación de privilegios
+                proceso.Start();
+                proceso.WaitForExit();
+
+                return proceso.ExitCode == 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                proceso.Close();
+                proceso.Dispose();
+            }
+        }
+
         #endregion
     }
 
