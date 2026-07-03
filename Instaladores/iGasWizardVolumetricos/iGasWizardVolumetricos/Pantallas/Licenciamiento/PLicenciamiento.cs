@@ -52,6 +52,10 @@ namespace iGasWizardVolumetricos.Pantallas.Licenciamiento
             this.txtLicenciaInocua.Enter += this.txtLicenciaVolumetrico_Enter;
             this.txtLicenciaInocua.Leave += this.item_Leave;
 
+            this.txtLicenciaHasp.Enter += this.txtNoSentinel_Enter;
+            this.txtLicenciaHasp.Leave += this.item_Leave;
+            this.txtLicenciaHasp.KeyPress += this.txtLicenciaHasp_KeyPress;
+
             this.chkEsTemporal.Enter += this.chkEsTemporal_Enter;
             this.chkEsTemporal.Leave += this.item_Leave;
 
@@ -86,6 +90,8 @@ namespace iGasWizardVolumetricos.Pantallas.Licenciamiento
 
             this.txtLicenciaControlVersiones.Properties.MaxLength = 8;
             this.txtLicenciaControlVersiones.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+
+            this.txtLicenciaHasp.Properties.MaxLength = 20;
 
             this.dtFechaVence.Properties.NullText = string.Empty;
             this.dtFechaVence.EditValue = null;
@@ -147,6 +153,15 @@ namespace iGasWizardVolumetricos.Pantallas.Licenciamiento
             if (!((key >= 48 && key <= 57) || // Numeros del 0 al 9
                 (key == 38) || // El simbolo '&'
                 (key == 8))) // El simbolo 'Retroceso (Borrar)'
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtLicenciaHasp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int key = (int)e.KeyChar;
+            if (!((key >= 48 && key <= 57) || // Numeros del 0 al 9
+                (key == 8))) // Retroceso (Borrar)
             {
                 e.Handled = true;
             }
@@ -219,6 +234,7 @@ namespace iGasWizardVolumetricos.Pantallas.Licenciamiento
                     this.txtRazonSocial.BeginSafe(delegate { this.txtRazonSocial.Text = this.Licenciamiento.RazonSocial; });
                     this.txtNoSentinel.BeginSafe(delegate { this.txtNoSentinel.Text = this.Licenciamiento.NoSentinel.ToString(); });
                     this.txtLicenciaVolumetrico.BeginSafe(delegate { this.txtLicenciaVolumetrico.Text = this.Licenciamiento.LicenciaVolumetrico; });
+                    this.txtLicenciaHasp.BeginSafe(delegate { this.txtLicenciaHasp.Text = this.Licenciamiento.LicenciaHaspDispensarios; });
                     this.chkEsTemporal.BeginSafe(delegate { this.chkEsTemporal.Checked = this.Licenciamiento.EsTemporal; });
                     this.txtRazonSocial.Focus();
                 }));
@@ -267,6 +283,15 @@ namespace iGasWizardVolumetricos.Pantallas.Licenciamiento
                 return;
             }
 
+            string licHasp = this.txtLicenciaHasp.Text.Trim();
+            e.Handled = string.IsNullOrEmpty(licHasp);
+            if (e.Handled)
+            {
+                Utilerias.Informacion("Debe especificar la licencia HASP del Servicio de Dispensarios");
+                this.txtLicenciaHasp.Focus();
+                return;
+            }
+
             int nSentinel = 0;
             int.TryParse(noSentinel, out nSentinel);
 
@@ -274,6 +299,7 @@ namespace iGasWizardVolumetricos.Pantallas.Licenciamiento
             this.Licenciamiento.NoSentinel = nSentinel;
             this.Licenciamiento.NoEstacion = nEstacion;
             this.Licenciamiento.LicenciaVolumetrico = licVol;
+            this.Licenciamiento.LicenciaHaspDispensarios = licHasp;
             this.Licenciamiento.EsTemporal = this.chkEsTemporal.Checked;
             this.Licenciamiento.FechaVence = this.chkEsTemporal.Checked ? (DateTime?)this.dtFechaVence.EditValue : null;
             string msj = string.Empty;

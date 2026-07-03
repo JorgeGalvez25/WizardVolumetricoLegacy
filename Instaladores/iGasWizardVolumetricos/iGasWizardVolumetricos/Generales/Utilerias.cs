@@ -186,7 +186,6 @@ namespace iGasWizardVolumetricos.Generales
                 proceso.StartInfo.Arguments = argumentos;
                 proceso.StartInfo.CreateNoWindow = true;
                 proceso.StartInfo.UseShellExecute = false;
-                proceso.StartInfo.Verb = "runas"; // Requiere elevación de privilegios
                 proceso.Start();
                 proceso.WaitForExit();
 

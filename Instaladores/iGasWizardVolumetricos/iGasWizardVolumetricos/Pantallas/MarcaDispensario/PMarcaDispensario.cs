@@ -223,6 +223,13 @@ namespace iGasWizardVolumetricos.Pantallas.MarcaDispensario
                     txtBitsDatos.Value = 7;
                     txtBitsParada.Value = 1;
                     break;
+                case 5://Hong Yang
+                    txtNumPuerto.Value = 1;
+                    txtVelocidad.Text = "2400";
+                    txtParidad.Text = "No paridad (N)";
+                    txtBitsDatos.Value = 8;
+                    txtBitsParada.Value = 1;
+                    break;
                 case 6://Gilbarco 2W
                 case 9://Wayne 2w
                     txtNumPuerto.Value = 2;
@@ -320,7 +327,20 @@ namespace iGasWizardVolumetricos.Pantallas.MarcaDispensario
                             pag = "PWayne";
                             break;
                         case 2:
-                            // ... (código existente de Bennett se mantiene igual)
+                            VariablesVolPersistencia pv = new VariablesVolPersistencia();
+                            VariablesVol v = new VariablesVol();
+                            v.SoportaSeleccionProducto = true;
+
+                            ex = pv.Guardar(v);
+                            if (string.IsNullOrEmpty(ex))
+                            {
+                                WorkItem.Objetos<VariablesVol>.Add(v);
+                                pag = "PIslas";
+                            }
+                            else
+                            {
+                                _u.Error(ex);
+                            }
                             break;
                         case 4:
                         case 6: // Gilbarco 2W

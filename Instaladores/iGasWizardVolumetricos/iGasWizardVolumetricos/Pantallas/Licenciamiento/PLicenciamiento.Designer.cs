@@ -52,6 +52,8 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.txtNoEstacion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLicenciaHasp = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRazonSocial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoSentinel.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -66,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaControlVersiones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenciaVolumetrico.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenciaControlVersiones.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLicenciaHasp.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExample.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -118,9 +121,11 @@
             this.groupBox1.Controls.Add(this.labelControl3);
             this.groupBox1.Controls.Add(this.labelControl6);
             this.groupBox1.Controls.Add(this.txtLicenciaControlVersiones);
+            this.groupBox1.Controls.Add(this.labelControl10);
+            this.groupBox1.Controls.Add(this.txtLicenciaHasp);
             this.groupBox1.Location = new System.Drawing.Point(23, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 159);
+            this.groupBox1.Size = new System.Drawing.Size(481, 204);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Licencia";
@@ -251,6 +256,22 @@
             this.txtLicenciaControlVersiones.Size = new System.Drawing.Size(164, 20);
             this.txtLicenciaControlVersiones.TabIndex = 6;
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(6, 155);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(178, 13);
+            this.labelControl10.TabIndex = 14;
+            this.labelControl10.Text = "Licencia HASP Servicio Dispensarios";
+            // 
+            // txtLicenciaHasp
+            // 
+            this.txtLicenciaHasp.Location = new System.Drawing.Point(6, 174);
+            this.txtLicenciaHasp.Name = "txtLicenciaHasp";
+            this.txtLicenciaHasp.Properties.MaxLength = 20;
+            this.txtLicenciaHasp.Size = new System.Drawing.Size(249, 20);
+            this.txtLicenciaHasp.TabIndex = 15;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtNoEstacion);
@@ -272,14 +293,14 @@
             // picExample
             // 
             this.picExample.EditValue = global::iGasWizardVolumetricos.Properties.Resources.Base;
-            this.picExample.Location = new System.Drawing.Point(23, 221);
+            this.picExample.Location = new System.Drawing.Point(23, 266);
             this.picExample.Name = "picExample";
             this.picExample.Properties.AllowFocused = false;
             this.picExample.Properties.PictureAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.picExample.Properties.ReadOnly = true;
             this.picExample.Properties.ShowMenu = false;
             this.picExample.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.picExample.Size = new System.Drawing.Size(481, 156);
+            this.picExample.Size = new System.Drawing.Size(481, 111);
             this.picExample.TabIndex = 7;
             // 
             // pictureEdit1
@@ -336,6 +357,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaControlVersiones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenciaVolumetrico.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenciaControlVersiones.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLicenciaHasp.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExample.Properties)).EndInit();
@@ -371,5 +393,7 @@
         private DevExpress.XtraEditors.CheckEdit chkEsTemporalInocua;
         private DevExpress.XtraEditors.TextEdit txtNoEstacion;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit txtLicenciaHasp;
     }
 }

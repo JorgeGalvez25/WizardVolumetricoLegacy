@@ -12,6 +12,7 @@ namespace iGasWizardVolumetricos.Persistencia.Entidades
                 this.RazonSocial = string.Empty;
             this.NoSentinel = 0;
             this.NoEstacion = 0;
+            this.LicenciaHaspDispensarios = string.Empty;
         }
 
         public string RazonSocial { get; set; }
@@ -21,6 +22,12 @@ namespace iGasWizardVolumetricos.Persistencia.Entidades
         public string LicienciaInocua { get; set; }
         public string LicenciaVolumetrico { get; set; }
         public string LicenciaControlVersiones { get; set; }
+
+        /// <summary>
+        /// Llave HASP que valida el Servicio de Dispensarios (PDISPENSARIOS).
+        /// Se escribe en PDISPENSARIOS.ini, sección [CONF], llave Licencia.
+        /// </summary>
+        public string LicenciaHaspDispensarios { get; set; }
 
         public bool EsTemporal { get; set; }
         public bool EsTemporalInocuo { get; set; }

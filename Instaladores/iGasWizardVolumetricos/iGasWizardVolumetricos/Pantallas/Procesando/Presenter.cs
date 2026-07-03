@@ -210,7 +210,22 @@ namespace iGasWizardVolumetricos.Pantallas.Procesando
                     return false;
                 }
 
-                // 2. Preparar el archivo PDISPENSARIOS.ini
+                // 2. Obtener la licencia HASP capturada en la pantalla de Licenciamiento
+                var licencia = WorkItem.Objetos<Licencia>.Get();
+                if (licencia == null || string.IsNullOrEmpty(licencia.LicenciaHaspDispensarios))
+                {
+                    msj = "No se ha capturado la licencia HASP del Servicio de Dispensarios.";
+                    return false;
+                }
+
+                // 3. Validar que el ejecutable del servicio exista en disco
+                if (!System.IO.File.Exists(Constantes.RutaServicioDispensarios))
+                {
+                    msj = string.Format("No se encontró el ejecutable del servicio de dispensarios en:\r\n{0}", Constantes.RutaServicioDispensarios);
+                    return false;
+                }
+
+                // 4. Preparar el archivo PDISPENSARIOS.ini
                 string iniPath = Constantes.RutaIniDispensarios;
                 string dirPath = Path.GetDirectoryName(iniPath);
 
@@ -220,21 +235,22 @@ namespace iGasWizardVolumetricos.Pantallas.Procesando
                     Directory.CreateDirectory(dirPath);
                 }
 
-                // Fix Bug Conocido: Crear el archivo base si no existe para que IniParser no arroje FileNotFoundException
-                // Fix Bug Conocido: Crear el archivo base si no existe para que IniParser no arroje FileNotFoundException
+                // Fix Bug Conocido: Crear el archivo base si no existe para que IniParser no arroje FileNotFoundException.
+                // IMPORTANTE: el servicio (PDISPENSARIOS/UIGASWAYNE2W) lee la sección [CONF], no [config].
                 if (!System.IO.File.Exists(iniPath))
                 {
-                    System.IO.File.WriteAllText(iniPath, "[config]\r\n");
+                    System.IO.File.WriteAllText(iniPath, "[CONF]\r\n");
                 }
 
                 // Escribir la configuración en el INI ANTES de instalar el servicio
                 IniParser parser = new IniParser(iniPath);
-                parser.EditSetting("config", "Marca", marcaVol.Marca.ToString());
-                parser.EditSetting("config", "ServidorSocket", "127.0.0.1:1004");
+                parser.EditSetting("CONF", "Marca", marcaVol.Marca.ToString());
+                parser.EditSetting("CONF", "ServidorSocket", "127.0.0.1:1004");
+                parser.EditSetting("CONF", "Licencia", licencia.LicenciaHaspDispensarios); // Llave HASP que valida el servicio al arrancar
                 parser.SaveSettings();
 
-                // 3. Ejecutar la instalación del servicio
-                if (!Utilerias.InstalarServicioWindows(Constantes.RutaServicioDispensarios, "/INSTALL"))
+                // 5. Ejecutar la instalación del servicio (/SILENT evita el diálogo modal de TService que bloquea WaitForExit)
+                if (!Utilerias.InstalarServicioWindows(Constantes.RutaServicioDispensarios, "/INSTALL /SILENT"))
                 {
                     msj = "Falló la ejecución del comando /INSTALL para el servicio de dispensarios. Verifique permisos de administrador.";
                     return false;
